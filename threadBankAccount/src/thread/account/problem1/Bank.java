@@ -7,9 +7,9 @@ public class Bank {
 		Thread[] slaves = new Thread[slaveCount];
 		for (int i = 0; i < slaveCount; i++) {
 			if (i % 2 == 0) {
-				slaves[i] = new Producer(account);
+				slaves[i] = new Producer(account);//array index: 0, 2
 			} else {
-				slaves[i] = new Consumer(account);
+				slaves[i] = new Consumer(account);//array index: 1, 3
 			}
 		}
 		for (int i = 0; i < slaveCount; i++) {
