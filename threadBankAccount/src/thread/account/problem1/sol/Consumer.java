@@ -12,9 +12,7 @@ class Consumer extends Thread {
 	public void run() {
 		for (int i = 0; i < 5; i++) {
 			synchronized (account) {
-				synchronized (account) {
-					account.withdraw(10);
-				}
+				account.withdraw(10);
 			}
 		}
 	}
