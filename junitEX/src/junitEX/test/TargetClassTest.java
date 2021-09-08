@@ -49,7 +49,7 @@ public class TargetClassTest {
 	@Test(expected = IllegalArgumentException.class)
 	public void test_voidFoo_exception() throws IllegalAccessException {
 
-		//Test the voidFoo() method with assertTrue
+		//Test the voidFoo() method
 		
 	}
 	
