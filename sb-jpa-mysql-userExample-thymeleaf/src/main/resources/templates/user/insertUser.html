@@ -1,0 +1,29 @@
+<html xmlns:th="http://www.thymeleaf.org" >
+
+<head>
+	<title>새 User 등록</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</head>
+
+<body th:align="center">
+<h1>User 등록</h1>
+<form th:action="@{/user/insertUser}" method="post">
+<table th:align="center" border="1" th:cellpadding="0" th:cellspacing="0">				
+	<tr>
+		<td bgcolor="orange" th:text="email" width="80"></td>
+		<td><input name="email" type="text" size="50"></td>
+	</tr>
+	<tr>
+		<td bgcolor="orange" th:text="name"></td>
+		<td><input name="name" type="text" size="50"></td>
+	</tr>
+	<tr>
+		<td colspan="2" align="center">
+			<input type="submit" value="User 등록">
+		</td>
+	</tr>
+</table>
+</form>	
+<a th:href="@{/user/getUserList}">User 목록</a>
+</body>
+</html>

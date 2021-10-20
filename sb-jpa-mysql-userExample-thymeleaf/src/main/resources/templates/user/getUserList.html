@@ -1,0 +1,28 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>User 목록</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</head>
+
+<body th:align="center">
+<h1>User 목록</h1>
+<hr>
+<table th:align="center" border="1" th:cellpadding="0" th:cellspacing="0" th:width="700">
+<tr>
+	<th bgcolor="orange" width="100">id</th>
+	<th bgcolor="orange" width="100">email</th>
+	<th bgcolor="orange" width="100">name</th>
+</tr>
+ 
+<tr th:each="user : ${userList}">
+	<td><a th:href="@{/user/getUser(id=${user.id})}" th:text="${user.id}"></a></td>
+	<td th:text="${user.email}" th:align="center">
+	<td th:text="${user.name}" th:align="center">
+</tr>
+
+</table>
+<br>
+<a th:href="@{/user/insertUser}">User 등록</a>
+</body>
+</html>
