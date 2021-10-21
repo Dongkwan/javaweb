@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"
+		xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<title>sidebar</title>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+<body>
+
+<!-- Sidebar -->
+<div class="w3-sidebar w3-light-grey w3-bar-block" style="width:25%">
+  <h3 class="w3-bar-item">Menu</h3>
+  <a class="w3-bar-item w3-button" th:href="@{/}">Home</a>
+  <a class="w3-bar-item w3-button" th:href="@{/user/getUserList}">User 목록</a>
+  <a class="w3-bar-item w3-button" th:href="@{/user/insertUser}">User 등록</a>
+  <a class="w3-bar-item w3-button" th:href="@{/about}">About</a>
+  
+</div>
+<!-- Page Content -->
+<div style="margin-left:25%">
+</div>
+
+</body>
+
+</html>
