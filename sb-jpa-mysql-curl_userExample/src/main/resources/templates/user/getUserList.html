@@ -1,13 +1,18 @@
-<html xmlns:th="http://www.thymeleaf.org">
-
+<html xmlns:th="http://www.thymeleaf.org"
+		xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head>
-	<title>User 목록</title>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>User 목록</title>
+<th:block th:replace="fragments/header"> </th:block>
 </head>
 
+<th:block th:replace="fragments/side" > </th:block>
+
 <body th:align="center">
-<h1>User 목록</h1>
+<div style="margin-left:25%">
 <hr>
+<h2>User 목록</h2>
+
+
 <table th:align="center" border="1" th:cellpadding="0" th:cellspacing="0" th:width="700">
 <tr>
 	<th bgcolor="orange" width="100">id</th>
@@ -24,5 +29,12 @@
 </table>
 <br>
 <a th:href="@{/user/insertUser}">User 등록</a>
+
+</div>
+
+<br>
+<th:block th:replace="fragments/footer"> </th:block>
+
 </body>
+
 </html>

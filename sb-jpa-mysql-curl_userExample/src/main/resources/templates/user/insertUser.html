@@ -1,12 +1,18 @@
-<html xmlns:th="http://www.thymeleaf.org" >
-
+<html xmlns:th="http://www.thymeleaf.org"
+		xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head>
-	<title>새 User 등록</title>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>User 등록</title>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<th:block th:replace="fragments/header"> </th:block>
 </head>
 
+<th:block th:replace="fragments/side" > </th:block>
+
 <body th:align="center">
-<h1>User 등록</h1>
+<div style="margin-left:25%">
+<hr>
+<h2>User 등록</h2>
+
 <form th:action="@{/user/insertUser}" method="post">
 <table th:align="center" border="1" th:cellpadding="0" th:cellspacing="0">				
 	<tr>
@@ -25,5 +31,9 @@
 </table>
 </form>	
 <a th:href="@{/user/getUserList}">User 목록</a>
+</div>
+<br>
+<th:block th:replace="fragments/footer"> </th:block>
+
 </body>
 </html>
