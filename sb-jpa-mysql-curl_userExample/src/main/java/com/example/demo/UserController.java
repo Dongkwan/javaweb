@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 
-
 @Controller // This means that this class is a Controller
 @RequestMapping(path = "/user") // This means URL's start with /demo (after Application path)
 public class UserController {
@@ -48,6 +47,21 @@ public class UserController {
 		return "user/getUser";
 	}	
 
+	@GetMapping("/updateUserView")
+	public String updateUserView(Integer id, Model model) {
+		System.out.println(id);
+		model.addAttribute("user", userRepository.findById(id).get());
+		return "user/updateUser";
+	}
+	
+	@PostMapping("/updateUser")
+	public String updateUser(User user, Model model) {
+		User findUser = userRepository.findById(user.getId()).get();
+		findUser.setEmail(user.getEmail());
+		findUser.setName(user.getName());		
+		userRepository.save(findUser);
+		return "redirect:getUserList";
+	}
 	
 	@PostMapping(path = "/add") // Map ONLY POST Requests
 	public @ResponseBody String addNewUser(@RequestParam String name, @RequestParam String email) {

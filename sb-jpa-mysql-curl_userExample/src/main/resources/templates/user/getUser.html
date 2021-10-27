@@ -24,7 +24,8 @@
 </tr>
 </table>
 <br>
-<a th:href="@{/user/getUserList}">User 목록</a>
+<a th:href="@{/user/getUserList}">User 목록</a> &nbsp&nbsp&nbsp 
+<a th:href="@{/user/updateUserView(id=${user.id}, email=${user.email})}">User 변경</a>
 </div>
 <br>
 <th:block th:replace="fragments/footer"> </th:block>

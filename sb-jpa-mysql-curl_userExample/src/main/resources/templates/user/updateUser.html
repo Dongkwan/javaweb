@@ -1,0 +1,47 @@
+<html xmlns:th="http://www.thymeleaf.org"
+		xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<title>User 변경</title>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<th:block th:replace="fragments/header"> </th:block>
+</head>
+
+<th:block th:replace="fragments/side" > </th:block>
+
+<body th:align="center">
+<div style="margin-left:25%">
+<hr>
+<h2>User 변경</h2>
+
+<form th:action="@{/user/updateUser}" method="post">
+<table th:align="center" border="1" th:cellpadding="0" th:cellspacing="0">				
+	<tr>
+		<td bgcolor="orange" th:text="id" width="80" ></td>
+		<td><input name="id" type="text" th:value="${user.id}" size="50">
+		</td>		
+	</tr>
+	<tr>
+		<td bgcolor="orange" th:text="email" width="80"></td>
+		<td><input name="email" type="text" th:value="${user.email}" size="50"></td>
+		
+	</tr>
+	<tr>
+		<td bgcolor="orange" th:text="name"></td>
+		<td><input name="name" type="text" th:value="${user.name}" size="50"></td>
+	</tr>
+	<tr>
+		<td colspan="2" align="center">
+			<input type="submit" value="User 변경">
+		</td>
+	</tr>
+	<tr>
+	</tr>	
+</table>
+</form>	
+<a th:href="@{/user/getUserList}">User 목록</a>
+</div>
+<br>
+<th:block th:replace="fragments/footer"> </th:block>
+
+</body>
+</html>
